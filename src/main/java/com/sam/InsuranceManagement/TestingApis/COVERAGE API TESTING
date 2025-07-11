@@ -1,0 +1,24 @@
+2. Coverage
+Add Coverage
+POST http://localhost:8080/api/coverages
+Valid JSON Body:
+
+{
+  "coverageName": "Health Insurance"
+}
+
+
+❌ Add Coverage (Empty coverageName)
+POST http://localhost:8080/api/coverages
+Invalid JSON Body:
+
+{
+  "coverageName": ""
+}
+Expected Error: Error: Coverage name is required.
+
+Get All Coverages
+GET http://localhost:8080/api/coverages
+
+Get Coverage by ID
+GET http://localhost:8080/api/coverages/1

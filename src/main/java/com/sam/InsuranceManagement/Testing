@@ -1,0 +1,82 @@
+# ----------------------------
+# CUSTOMER API TESTING GUIDE
+# Base URL: http://localhost:8080/api/customers
+# ----------------------------
+
+# ----------------------------
+# 1. Add a New Customer (POST)
+# ----------------------------
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+
+Request Body:
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "gender": "M",
+  "dob": "1990-05-15",
+  "mobileNumber": "9876543210",
+  "cityId": 1,
+  "stateId": 2,
+  "countryId": 3,
+  "occupationId": 4
+}
+
+# Expected: Success message with created customer details.
+
+# ----------------------------
+# 2. Get All Customers (GET)
+# ----------------------------
+GET http://localhost:8080/api/customers
+
+# Expected: List of all customers.
+
+# ----------------------------
+# 3. Get Customer by ID (GET)
+# ----------------------------
+GET http://localhost:8080/api/customers/1
+
+# Replace '1' with the actual customer ID you want to fetch.
+# Expected: Customer details if ID exists, error message otherwise.
+
+# ----------------------------
+# 4. Update Customer (PUT)
+# ----------------------------
+PUT http://localhost:8080/api/customers/1
+Content-Type: application/json
+
+Request Body:
+{
+  "firstName": "Johnny",
+  "lastName": "Doe",
+  "gender": "M",
+  "dob": "1990-05-15",
+  "mobileNumber": "9876543211",
+  "cityId": 1,
+  "stateId": 2,
+  "countryId": 3,
+  "occupationId": 5
+}
+
+# Replace '1' with the actual customer ID you want to update.
+# Expected: Success message if update is valid.
+
+# ----------------------------
+# 5. Invalid Request Example (POST)
+# ----------------------------
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+
+Request Body:
+{
+  "firstName": "",
+  "lastName": "",
+  "gender": "X",
+  "dob": "2025-01-01",
+  "mobileNumber": "12345",
+  "cityId": -1,
+  "stateId": 0,
+  "countryId": 0,
+  "occupationId": 0
+}
+

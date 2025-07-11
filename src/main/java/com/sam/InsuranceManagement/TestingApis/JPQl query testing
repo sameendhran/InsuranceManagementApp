@@ -1,0 +1,46 @@
+| Controller Method                      | Example Test URL                                                 | What It Does                                                |
+| -------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------- |
+| `getCustomersByCityName(cityName)`     | `GET http://localhost:8080/api/customers/by-city/Chennai`        | Fetch all customers in the specified city                   |
+| `getCustomersByGender(gender)`         | `GET http://localhost:8080/api/customers/by-gender/M`            | Fetch all customers by gender (`M` or `F`)                  |
+| `getCustomersBornBefore(date)`         | `GET http://localhost:8080/api/customers/born-before/1990-01-01` | Fetch all customers born before the given date              |
+    | `getCustomerCountByCity(cityName)`     | `GET http://localhost:8080/api/customers/count-by-city/Chennai`  | Get the number of customers in the specified city           |
+| `getCustomersWithPremiumAbove(amount)` | `GET http://localhost:8080/api/customers/premium-above/5000.0`   | Fetch all customers with policy premium greater than amount |
+| `getCustomersByPolicyType(typeName)`   | `GET http://localhost:8080/api/customers/by-policy-type/Life`    | Fetch all customers with the given policy type              |
+| `getCustomersByOccupationId(id)`       | `GET http://localhost:8080/api/customers/by-occupation/1`      | Fetch all customers with the specified occupation ID        |
+| `getCustomersBornAfter(date)`          | `GET http://localhost:8080/api/customers/born-after/1990-01-01`  | Fetch all customers born after the given date               |
+| `getCustomersWithNoPolicies()`         | `GET http://localhost:8080/api/customers/no-policies`            | Fetch all customers who do not have any policies            |
+
+
+
+Entity: City
+
+| Controller Method                 | Example Test URL                                       | What It Does                                |
+| --------------------------------- | ------------------------------------------------------ | ------------------------------------------- |
+| `getCitiesByNameIgnoreCase(name)` | `GET http://localhost:8080/api/cities/by-name/Chennai` | Fetch all cities by name (case-insensitive) |
+
+
+Entity: Policy
+
+| Controller Method                     | Example Test URL                                                                 | What It Does                                                  |
+| ------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `getPoliciesByPremium(amount)`        | `GET http://localhost:8080/api/policies/by-premium/3000`                         | Fetch policies where premium is greater than the given amount |
+| `getPoliciesByDateRange(start, end)`  | `GET http://localhost:8080/api/policies/by-date?start=2023-01-01&end=2023-12-31` | Fetch policies created within a date range                    |
+| `getPoliciesByCustomerName(name)`     | `GET http://localhost:8080/api/policies/by-customer-name/John`                   | Fetch policies by customer name (partial match allowed)       |
+| `getPoliciesByCustomerGender(gender)` | `GET http://localhost:8080/api/policies/by-customer-gender/M`                    | Fetch policies for male/female customers (M or F)             |
+| `getPoliciesByCustomerCity(city)`     | `GET http://localhost:8080/api/policies/by-customer-city/Chennai`                | Fetch policies where customer is from a particular city       |
+
+
+Entity: PolicyType
+
+| Controller Method                      | Example Test URL                                          | What It Does                                       |
+| -------------------------------------- | --------------------------------------------------------- | -------------------------------------------------- |
+| `getPolicyTypesByNameIgnoreCase(name)` | `GET http://localhost:8080/api/policy-types/by-name/Life` | Fetch policy types by type name (case-insensitive) |
+
+
+
+Entity: Coverage
+
+
+| Controller Method                    | Example Test URL                                                  | What It Does                                      |
+| ------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------- |
+| `getCoveragesByNameIgnoreCase(name)` | `GET http://localhost:8080/api/coverages/by-name/Health Coverage` | Fetch coverage records by name (case-insensitive) |

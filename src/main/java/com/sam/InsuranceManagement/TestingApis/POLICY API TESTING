@@ -1,0 +1,36 @@
+5. Policy
+Add Policy
+POST http://localhost:8080/api/policies
+Valid JSON Body: (use existing customerId, coverageId, policyTypeId)
+
+{
+  "policyNumber": "POL12345",
+  "premium": 5000.0,
+  "customerId": 1,
+  "coverageId": 1,
+  "policyTypeId": 1
+}
+
+
+❌ Add Policy (Empty policyNumber)
+POST http://localhost:8080/api/policies
+Invalid JSON Body:
+
+{
+  "policyNumber": "",
+  "premium": 5000.0,
+  "customerId": 1,
+  "coverageId": 1,
+  "policyTypeId": 1
+}
+Expected Error: Error: Policy number is required.
+
+Get All Policies
+GET http://localhost:8080/api/policies
+
+Get Policy by ID
+GET http://localhost:8080/api/policies/1
+
+Get Policies by Customer ID
+GET http://localhost:8080/api/policies/customer/1
+
